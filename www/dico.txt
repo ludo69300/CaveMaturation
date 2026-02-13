@@ -1,1 +1,5 @@
-
+consigne_temp_mini:13
+consigne_temp_maxi:16
+consigne_humi_nini:60
+consigne_humi_maxi:70
+consigne_ventilateur:On

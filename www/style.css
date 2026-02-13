@@ -1,0 +1,145 @@
+/* ===== Reset de base / mobile-first ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 40px;
+  line-height: 1.5;
+  color: #222;
+  background-color: #f5f5f5;
+}
+
+/* ===== Structure générale ===== */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header,
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 12px 16px;
+}
+
+header h1 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+  padding: 12px;
+}
+
+/* ===== Formulaire ===== */
+form {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Fieldsets et légendes */
+fieldset {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px 12px 16px;
+  margin-bottom: 16px;
+  background-color: #fff;
+}
+
+legend {
+  padding: 0 8px;
+  font-weight: 600;
+}
+
+/* Titres de section */
+h3 {
+  font-size: 1.3rem;
+  margin: 12px 0 8px;
+}
+
+/* ===== Grille : container / box ===== */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Sur mobile : chaque box prend toute la largeur */
+.box {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label au-dessus du champ pour mobile */
+.box label {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+/* Champs texte / number */
+.box input[type="text"],
+.box input[type="number"],
+.box input[type="button"] {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 1rem;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+/* Entrées en lecture seule (mesures) */
+.box input[readonly] {
+  background-color: #f0f0f0;
+  font-weight: 600;
+}
+
+/* Bouton ventilation */
+#ventilation {
+  background-color: #0069d9;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 4px;
+  height: 8rem
+  border-radius: 16px;
+}
+
+#ventilation:hover {
+  background-color: #0051a8;
+}
+
+/* ===== Améliorations pour écrans plus larges ===== */
+@media (min-width: 600px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  main {
+    padding: 16px;
+  }
+
+  fieldset {
+    padding: 16px 16px 20px;
+  }
+
+  /* Sur tablette/PC : les .box d'une .container sont en 2 colonnes */
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+  }
+
+  .box {
+    flex: 1 1 45%;
+  }
+}

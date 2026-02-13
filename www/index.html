@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="refresh" content="5">
+	<script src="scripts.js" defer></script>
+	<link href="style.css" rel="stylesheet" />
+	<link rel="icon" href="images/favicon.ico" />
+	<title>Cave de séchage et affinage</title>
+</head>
+<body>
+<header>
+<h1>Cave de maturation</h1>
+</header>
+<main>
+<form action="" method="post">
+	<fieldset>
+		<legend>Mesure</legend>
+			<div class="container">
+			<div class="box">
+				<label for="Temperature">Température</label>
+				<div>
+					<input id="Temperature" name="Temperature" readonly="readonly"  type="text" value="{{temperature}}">
+				</div>
+			</div>
+			<div class="box">
+				<label for="Humidity">Humidité</label>
+				<div>
+					<input id="Humidity" name="Humidity" readonly="readonly"  type="text" value="{{humidity}}">
+				</div>
+			</div>
+			<div class="box">
+				<label for="pressure">pession</label>
+				<div>
+					<input id="pressure" name="pressure" readonly="readonly"  type="text" value="{{pressure}}">
+				</div>
+			</div>
+		</div>
+	</fieldset>
+	<fieldset>
+	<legend>paramètre</legend> <!-- Titre du fieldset -->
+		<h3>Réglage température</h3>
+		<div class="container">
+			<div class="box">
+				<label for="temp_mini">Seuil mini température</label>
+				<div>
+					<input inputmode="decimal" id="temp_mini" onchange="fct_temp_mini()" min="1" max="100" step="1"  type="number" value="{{consigne_temp_mini}}">
+				</div>
+			</div>
+			<div class="box">
+				<label for="temp_max">Seuil maxi température</label>
+				<div>
+					<input inputmode="decimal" id="temp_max" onchange="fct_temp_max()" min="1" max="100" step="1"  type="number" value="{{consigne_temp_maxi}}">
+				</div>
+			</div>
+		</div>
+		<h3>Réglage humidité</h3>
+		<div class="container">
+			<div class="box">
+				<label for="humid_mini">% humidité mini</label>
+				<div>
+					<input inputmode="decimal" id="humid_mini" onchange="fct_humid_mini()" min="2" max="100" step="1"  type="number" value="{{consigne_humi_nini}}">
+				</div>
+			</div>
+			<div class="box">
+				<label for="humid_max">% humidité maxi</label>
+				<div>
+					<input inputmode="decimal" id="humid_max" onchange="fct_humid_max()" min="1" max="100" step="1"  type="number" value="{{consigne_humi_maxi}}">
+				</div>
+			</div>
+		</div>
+		<h3>Ventilateur</h3>
+		<div class="container">
+			<div class="box">
+				<label for="humid_mini">ventilation : {{consigne_ventilateur}}</label>
+				<div>
+					<input id="ventilation" onclick="fct_ventilation()" type="button" value="Ventilation">
+				</div>
+			</div>
+		</div>
+	</fieldset>
+</form>
+</main>
+<footer><p>commande: {{commande}}</p></footer>
+</body>
+</html>
+
+
