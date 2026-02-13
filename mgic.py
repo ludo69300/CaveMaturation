@@ -17,7 +17,7 @@ pilote_chauffage.off()
 pilote_refroidissement.off()
 pilote_humidificateur.off()
 pilote_deshumidificateur.off()
-pilote_ventilateur.off()
+pilote_ventilateur.on()
 
 #########################################################################
 def gestion_interne_et_affichages_capteurs(dico) :
@@ -60,10 +60,10 @@ def gestion_interne_et_affichages_capteurs(dico) :
     #print('deshumidificateur',pilote_deshumidificateur_t)#debug
 
     if dico["consigne_ventilateur"]=="On":
-        pilote_ventilateur.on()
+        pilote_ventilateur.off()
         pilote_ventilateur_t='on'
     else :
-        pilote_ventilateur.off()
+        pilote_ventilateur.on()
         pilote_ventilateur_t='off'
     #print('ventilateur : ',pilote_ventilateur_t)#debug
 
@@ -74,4 +74,5 @@ def gestion_interne_et_affichages_capteurs(dico) :
     
     ###################################################################    
     print (dico) # controle debug
+
     return(dico)
