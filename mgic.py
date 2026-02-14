@@ -17,7 +17,7 @@ pilote_chauffage.off()
 pilote_refroidissement.off()
 pilote_humidificateur.off()
 pilote_deshumidificateur.off()
-pilote_ventilateur.on()
+pilote_ventilateur.off()
 
 #########################################################################
 def gestion_interne_et_affichages_capteurs(dico) :
@@ -76,3 +76,4 @@ def gestion_interne_et_affichages_capteurs(dico) :
     print (dico) # controle debug
 
     return(dico)
+
