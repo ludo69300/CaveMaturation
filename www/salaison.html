@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Calculateur salaison</title>
+        <script src="scriptsalaison.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <div>
+            <label for="type sal">type ou produit</label>
+            <div>
+                <select id="typesalaison" name="typeMateriau" onchange="fcntypeSalaison()" class="field large required valid"
+                    aria-invalid="false">
+                    <option value="0" >SALAISON SOUS VIDE</option>
+                    <option value="1" >SAUMURE LEGERE</option>
+                    <option value="2" >CÔTE DE BOEUF</option>
+                    <option value="3">FOIE GRAS</option>
+                    <option value="4" >SAUMON FUMÉ</option>
+                    <option value="5" vt="5.50%" data-i="5">PÂTE À PIZZA</option>
+                    <option value="6" vt="6.00%" data-i="6">PÂTE À BUNS</option>
+                </select>
+            </div>
+        </div>
+        </header>
+        <main>
+            <form action="" method="post">
+                <fieldset style="overflow:auto;width:25%;display:inline-block">
+                    <legend><h2 id="salaison">Salaison sous vide</h2></legend> <!-- Titre du fieldset -->
+                    <div>
+                        <label for="salaisonHauteur">Hauteur viande (en Cm)</label>
+                        <div>
+                            <input inputmode="decimal" id="salaisonHauteur" name="salaisonHauteur" min="1" max="20" step="1"class="field digits large required" type="number" value="4">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="salaisonJour">Nombre de jour</label>
+                        <div>
+                            <input id="salaisonJour" name="salaisonJour" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="3 j">
+                        </div>
+                    </div>
+                    <div>
+                    <div>
+                        <label for="salaisonPoids">Poids viande (en grammes)</label>
+                        <div>
+                            <input inputmode="decimal" id="salaisonPoids" name="salaisonPoids" min="100" max="20000" step="1"
+                            class="field digits large required" type="number" value="1000">
+                        </div>
+                    </div>
+                    <div>
+                            <label for="salaisonSelect">% de sel fin (4,5% recommandé)</label>
+                            <div>
+                            <select id="salaisonSelect" name="salaisonSelect" class="field large required valid"
+                                aria-invalid="false">
+                                <option value="0.03">3.00%</option>
+                                <option value="0.035">3.50%</option>
+                                <option value="0.04">4.00%</option>
+                                <option selected="selected" value="0.045">4.50%</option>
+                                <option value="0.05">5.00%</option>
+                                <option value="0.055">5.50%</option>
+                                <option value="0.06">6.00%</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="salaisonSel">Sel fin (ou sel nitré)</label>
+                        <div>
+                            <input id="salaisonSel" name="salaisonSel" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="45 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="salaisonSucre">Sucre roux</label>
+                        <div>
+                            <input id="salaisonSucre" name="salaisonSucre" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="22.50 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="salaisonPoivre">Poivre moulu</label>
+                        <div>
+                            <input id="salaisonPoivre" name="salaisonPoivre" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="1 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="salaisonBaie">Baie de Genièvre</label>
+                        <div>
+                            <input id="salaisonBaie" name="salaisonBaie" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="1 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="salaisonEpices">4 épices</label>
+                        <div>
+                            <input id="salaisonEpices" name="salaisonEpices" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="0.50 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="salaisonLaurier">Laurier </label>
+                        <div>
+                            <input id="salaisonLaurier" name="salaisonLaurier" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="2.0 Feuilles">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset style="overflow:auto;width:25%;display:none">
+                    <legend><h2 id="saumure">Saumure légère</h2></legend> <!-- Titre du fieldset -->
+                    <h3>Pour le Pastrami de Dinde ou le Poulet fumé</h3>
+                    <div>
+                        <label for="saumureeau">Volume d'eau en Litre</label>
+                        <div>
+                            <input inputmode="decimal" id="saumureeau" name="saumureeau" min="1" max="100" step="1"
+                            class="field digits large required" type="number" value="1">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="saumureSel">Sel fin</label>
+                        <div>
+                            <input id="saumureSel" name="saumureSel" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="60 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="saumureSucre">Sucre roux</label>
+                        <div>
+                            <input id="saumureSucre" name="saumureSucre" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="30 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="saumurePoivre">Poivre en grain</label>
+                        <div>
+                            <input id="saumurePoivre" name="saumurePoivre" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="5 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="saumureBaie">Baie de Genièvre</label>
+                        <div>
+                            <input id="saumureBaie" name="saumureBaie" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="10 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="saumureSauge">Sauge</label>
+                        <div>
+                            <input id="saumureSauge" name="saumureSauge" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="2 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="saumureThym">Thym</label>
+                        <div>
+                            <input id="saumureThym" name="saumureThym" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="1 branche(s)">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="saumureClou">Clou de Girofle</label>
+                        <div>
+                            <input id="saumureClou" name="saumureClou" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="1 clou(s)">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="saumureLaurier">Laurier</label>
+                        <div>
+                            <input id="saumureLaurier" name="saumureLaurier" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="2.0 Feuilles">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset style="overflow:auto;width:25%;display:none">
+                    <legend><h2 id="cote">Côte de boeuf</h2></legend> <!-- Titre du fieldset -->
+                    <div>
+                        <label for="cotePoids">Poids de la côte de boeuf  (en grammes)</label>
+                        <div>
+                            <input inputmode="decimal" id="cotePoids" name="cotePoids" min="100" max="20000" step="1"
+                            class="field digits large required" type="number" value="1000">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="coteSel">Sel</label>
+                        <div>
+                            <input id="coteSel" name="coteSel" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="45 gr">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset style="overflow:auto;width:25%;display:none">
+                    <legend><h2 id="foie">Foie Gras</h2></legend> <!-- Titre du fieldset -->
+                    <div>
+                        <label for="foiePoids">Poids foie gras (en grammes)</label>
+                        <div>
+                            <input inputmode="decimal" id="foiePoids" name="foiePoids" min="100" max="20000" step="1"
+                            class="field digits large required" type="number" value="1000">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="foieSel">Sel fin</label>
+                        <div>
+                            <input id="foieSel" name="foieSel" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="45 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="foieSucre">Sucre</label>
+                        <div>
+                            <input id="foieSucre" name="foieSucre" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="6 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="foiePoivre">Poivre</label>
+                        <div>
+                            <input id="foiePoivre" name="foiePoivre" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="2 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="foieEpices">4 épices</label>
+                        <div>
+                            <input id="foieEpices" name="foieEpices" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="1 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="foieLiquoreux">Liquoreux</label>
+                        <div>   
+                            <input id="foieLiquoreux" name="foieLiquoreux" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="20 gr">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset style="overflow:auto;width:25%;display:none">
+                    <legend><h2 id="saumon">Salage sous-vide Saumon fumé </h2></legend> <!-- Titre du fieldset -->
+                    <div>
+                        <label for="saumonPoids">Poids de la truite ou saumon (en grammes)</label>
+                        <div>
+                            <input inputmode="decimal" id="saumonPoids" name="saumonPoids" min="100" max="20000" step="1"
+                            class="field digits large required" type="number" value="1000">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="saumonSel">Gros sel de Guérande moulu ou sel fin</label>
+                        <div>
+                            <input id="saumonSel" name="saumonSel" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="34 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="saumonSucre">Sucre</label>
+                        <div>
+                            <input id="saumonSucre" name="saumonSucre" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="17 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="saumonBaie">Baie de Genièvre</label>
+                        <div>
+                            <input id="saumonBaie" name="saumonBaie" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="1 gr">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset style="overflow:auto;width:25%;display:none">
+                    <legend><h2 id="pizza">Pâte à pizza</h2></legend> <!-- Titre du fieldset -->
+                    <div>
+                        <label for="pizzaPoids">Poids de la pâte (en grammes)</label>
+                        <div>
+                            <input inputmode="decimal" id="pizzaPoids" name="pizzaPoids" min="100" max="20000" step="1"
+                            class="field digits large required" type="number" value="1000">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="pizzaFarine">Farine</label>
+                        <div>
+                            <input id="pizzaFarine" name="pizzaFarine" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="45 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="pizzaEau">Eau</label>
+                        <div>
+                            <input id="pizzaEau" name="pizzaEau" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="6 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="pizzaSel">Sel</label>
+                        <div>
+                            <input id="pizzaSel" name="pizzaSel" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="2 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="pizzaLevure">Levure fraîche de boulanger</label>
+                        <div>
+                            <input id="pizzaLevure" name="pizzaLevure" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="1 gr">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset style="overflow:auto;width:25%;display:none">
+                    <legend><h2 id="buns">Pâte à buns</h2></legend> <!-- Titre du fieldset -->
+                    <div>
+                        <label for="bunsNb">Nombre de buns (de 100 grammes)</label>
+                        <div>
+                            <input inputmode="decimal" id="bunsNb" name="bunsNb" min="1" max="500" step="1"
+                            class="field digits large required" type="number" value="10">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="bunsPoids">Poids total</label>
+                        <div>
+                            <input id="bunsPoids" name="bunsPoids" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="1000 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="bunsFarine">Farine</label>
+                        <div>
+                            <input id="bunsFarine" name="bunsFarine" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="523.56 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="bunsEau">Eau</label>
+                        <div>
+                            <input id="bunsEau" name="bunsEau" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="130.89 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="bunsLait">Lait</label>
+                        <div>
+                            <input id="bunsLait" name="bunsLait" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="130.89 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="bunsHuile">Huile</label>
+                        <div>
+                            <input id="bunsHuile" name="bunsHuile" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="10.47 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="bunsSel">Sel</label>
+                        <div>
+                            <input id="bunsSel" name="bunsSel" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="10.47 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="bunsLevure">Levure fraîche de boulanger</label>
+                        <div>
+                            <input id="bunsLevure" name="bunsLevure" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="10.47 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="bunsSucre">Sucre</label>
+                        <div>
+                            <input id="bunsSucre" name="bunsSucre" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="26.18 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="bunsBeurre">Beurre</label>
+                        <div>
+                            <input id="bunsBeurre" name="bunsBeurre" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="52.36 gr">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="bunsPuree">Purée de pomme de terres</label>
+                        <div>
+                            <input id="bunsPuree" name="bunsPuree" readonly="readonly"
+                            class="codepeoplecalculatedfield field large valid" type="text" value="104.71 gr">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </main>
+        <footer>
+            <table class="alignleft" border="1" width="1200" cellspacing="0" cellpadding="8">
+                <caption> Temps de Fumage<br />
+                </caption>
+                <thead>
+                    <tr>
+                        <th colspan="8" ALIGN="LEFT">Il est difficile de définir exactement et précisément les temps de fumage car ils varient suivant :<br />
+                            <ul>
+                                <li>Votre matériel de fumage</li>
+                                <li>le produit à fumer (la nature du produit et la façon dont il a été salé influence la durée de fumage)</li>
+                                <li> le degré de fumaison souhaité (une histoire de goût !)</li>
+                            </ul>
+                            Nous vous proposons juste, à titre indicatif, ce petit tableau des temps de fumage :
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Désignation</th>
+                        <th>Découpe</th>
+                        <th>Salage à sec (par recouvrement)</th>
+                        <th>Salage liquide (en saumure)</th>
+                        <th>Déssalage</th>
+                        <th>Séchage au froid</th>
+                        <th>Fumage</th>
+                        <th>Séchage</th>
+                    </tr>
+                </thead>
+            <tbody>
+            <tr>
+                <td>Saumon (2 à 3 kg)</td>
+                <td>En filet, sans arêtes sur peau</td>
+                <td>5 à 6 heures</td>
+                <td>10 à 12 heures</td>
+                <td>Rincer à l'eau claire</td>
+                <td>12 heures</td>
+                <td>4 à 6 heures</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Saumon(5 à 6 kg)</td>
+                <td>Séparer en évitant les entailler<br />et retirer les arêtes</td>
+                <td>8 à 10 heures</td>
+                <td></td>
+                <td>Rincer à l'eau claire</td>
+                <td>Egouttage sur grille<br />chambre froide 12 heures</td>
+                <td>6 à 8 heures</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Truite</td>
+                <td>En filet ou entière</td>
+                <td>2 ou 3 heures</td>
+                <td>10 à 12 heures</td>
+                <td>Rincer à l'eau claire</td>
+                <td>12 heures</td>
+                <td>2 ou 3 heures /1⁄2</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Truite saumonée</td>
+                <td>En filet ou entière</td>
+                <td>2 à 3 heures</td>
+                <td>10 à 12 heures</td>
+                <td>Rincer à l'eau claire</td>
+                <td>12 heures</td>
+                <td>4 à 6 heures</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Anguille</td>
+                <td>Entière</td>
+                <td>3 à 4 heures</td>
+                <td>10 à 12 heures</td>
+                <td>Rincer à l'eau claire</td>
+                <td>12 heures</td>
+                <td>4 heures un peu chaud</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Flétan</td>
+                <td>En filet avec la peau</td>
+                <td>2 à 3 heures</td>
+                <td>10 à 12 heures</td>
+                <td>Rincer à l'eau claire</td>
+                <td>12 heures</td>
+                <td>3 heures</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Magret d'oie</td>
+                <td>parrez votre magret<br />(enlever la graisse, les nerfs, sang)<br />Laissez la peau sur le dessus</td>
+                <td>Les frotter un par un<br />avec un bouquet garni puis<br />les laisser 7 à 8 heures</td>
+                <td></td>
+                <td>Rincer à l'eau claire</td>
+                <td>24 heures</td>
+                <td>6 à 10 heures</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Poulet</td>
+                <td>Crapaudine</td>
+                <td>6 heures</td>
+                <td></td>
+                <td>Rincer à l'eau claire</td>
+                <td>24 heures</td>
+                <td>4 à 6 heures</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Porc</td>
+                <td>Poitrine, longe,saucisses,chipolatas</td>
+                <td>8 à 10 heures selon épaisseur</td>
+                <td></td>
+                <td>Tremper 45 min</td>
+                <td>24 heures</td>
+                <td>3 x 8 heures</td>
+                <td>40% du poids avant salaison</td>
+            </tr>
+            <tr>
+                <td>Magret de canard 600 g</td>
+                <td>parrez votre magret<br />(enlever la graisse, les nerfs, sang)<br />Laissez la peau sur le dessus</td>
+                <td>Le frotter avec un<br />bouquet garni puis le<br />laisser 7 à 8 heures</td>
+                <td></td>
+                <td>Retirer le gros sel<br />avec un chiffon sec</td>
+                <td>24 à 48 heures dans un<br />lendroit sec et frais</td>
+                <td>6 à 8 heures</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Magret de canard 1 kg</td>
+                <td>parrez votre magret<br />(enlever la graisse, les nerfs, sang)<br />Laissez la peau sur le dessus</td>
+                <td>Le frotter avec un<br />bouquet garni puis le<br />laisser 7 à 8 heures</td>
+                <td></td>
+                <td>Retirer le gros sel<br />avec un chiffon sec</td>
+                <td>24 à 48 heures dans un<br />lendroit sec et frais</td>
+                <td>2 x 8 heures</td>
+                <td>26 à 30% du poids avant salaison</td>
+            </tr>
+            <tr>
+                <td>Filet mignon 300 gr</td>
+                <td>parrez votre magret<br />(enlever la graisse, les nerfs, sang)<br />Laissez la peau sur le dessus</td>
+                <td>12 à 15 heures</td>
+                <td>12 à 15 heures</td>
+                <td>Retirer le gros sel<br />avec un chiffon sec</td>
+                <td>24 à 48 heures dans un<br />lendroit sec et frais</td>
+                <td>2 x 8 heures</td>
+                <td>30% du poids avant salaison</td>
+            </tr>
+            <tr>
+                <td>Darne de saumon</td>
+                <td>Entière</td>
+                <td> 2 à 3 heures</td>
+                <td>10 à 12 heures</td>
+                <td>Rincer à l'eau claire</td>
+                <td>Egouttage sur grille<br />chambre froide 12 heures</td>
+                <td>6 à 8 heures</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Poitrine de porc 1,5Kg</td>
+                <td></td>
+                <td>2 à 3 jours</td>
+                <td>2 à 3 jours</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>40% du poids avant salaison</td>
+            </tr>
+            <tr>
+                <td>Jambon sans os</td>
+                <td></td>
+                <td>12 à 16 jours</td>
+                <td>12 à 16 jours</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>40% du poids avant salaison</td>
+            </tr>
+            <tr>
+                <td>Magret de canard</td>
+                <td>parrez votre magret<br />(enlever la graisse, les nerfs, sang)<br />Laissez la peau sur le dessus</td>
+                <td>12h/cm d’épaisseur+1 jour</td>
+                <td></td>
+                <td>Retirer le gros sel<br />avec un chiffon sec</td>
+                <td>24 à 48 heures dans un<br />lendroit sec et frais</td>
+                <td>6 à 8 heures</td>
+                <td>26 à 30% du poids avant salaison</td>
+            </tr>
+            </tbody>
+        </table>
+        <p>Affinag du fromage température 8 et 13°C une hygromertrie entre 85% et 95% avec ventilation et aération </p>
+        <p>sechage viande température 13 et 16°C une hygromertrie entre 60% et 70% </p>
+        </footer>
+    </body>
+</html>
