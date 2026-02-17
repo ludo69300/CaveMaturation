@@ -89,6 +89,7 @@ h3 {
 /* Champs texte / number */
 .box input[type="text"],
 .box input[type="number"],
+.box select,
 .box input[type="button"] {
   width: 100%;
   padding: 8px 10px;
