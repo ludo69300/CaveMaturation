@@ -9,25 +9,28 @@
         <link rel="icon" href="images/favicon.ico" />
     </head>
     <body>
-        <header>
-            <div>
-            <label for="type sal">type ou produit</label>
-            <div>
-                <select id="typesalaison" name="typeMateriau" onchange="fcntypeSalaison()" class="field large required valid"
-                    aria-invalid="false">
-                    <option value="0" >SALAISON SOUS VIDE</option>
-                    <option value="1" >SAUMURE LEGERE</option>
-                    <option value="2" >CÔTE DE BOEUF</option>
-                    <option value="3">FOIE GRAS</option>
-                    <option value="4" >SAUMON FUMÉ</option>
-                    <option value="5" vt="5.50%" data-i="5">PÂTE À PIZZA</option>
-                    <option value="6" vt="6.00%" data-i="6">PÂTE À BUNS</option>
-                </select>
-            </div>
-        </div>
+         <header>
+            <h1>Cave de maturation</h1>
+            <a href="index.html">Retour</a>
+            
         </header>
         <main>
             <form action="" method="post">
+                <div>
+                    <label for="type sal">type ou produit</label>
+                    <div>
+                        <select id="typesalaison" name="typeMateriau" onchange="fcntypeSalaison()" class="field large required valid"
+                            aria-invalid="false">
+                            <option value="0" >SALAISON SOUS VIDE</option>
+                            <option value="1" >SAUMURE LEGERE</option>
+                            <option value="2" >CÔTE DE BOEUF</option>
+                            <option value="3">FOIE GRAS</option>
+                            <option value="4" >SAUMON FUMÉ</option>
+                            <option value="5" vt="5.50%" data-i="5">PÂTE À PIZZA</option>
+                            <option value="6" vt="6.00%" data-i="6">PÂTE À BUNS</option>
+                        </select>
+                    </div>
+                </div>
                 <fieldset style="overflow:auto;width:25%;display:inline-block">
                     <legend><h2 id="salaison">Salaison sous vide</h2></legend> <!-- Titre du fieldset -->
                     <div>
