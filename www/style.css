@@ -49,6 +49,7 @@ form {
 
 /* Fieldsets et légendes */
 fieldset {
+  width: 100%;
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 12px 12px 16px;
