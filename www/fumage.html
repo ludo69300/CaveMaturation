@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>fumage</title>
+        <script src="scriptsalaison.js" defer></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <!-- Le reste du contenu -->
+        <header>
+            <h1>Cave de maturation</h1>
+            <a href="index.html">home</a>
+            <a href="salaison.html">Salaison</a>
+        </header>
+        <main>
+        		<p>Il est difficile de définir exactement et précisément les temps de fumage car ils varient suivant :<br />
+                        <ul>
+                            <li>Votre matériel de fumage</li>
+                            <li>le produit à fumer (la nature du produit et la façon dont il a été salé influence la durée de fumage)</li>
+                            <li> le degré de fumaison souhaité (une histoire de goût !)</li>
+                        </ul>
+            Nous vous proposons juste, à titre indicatif, ce petit tableau des temps de fumage :</p>
+            <div class="box">
+                <label for="type sal">type ou produit</label>
+                <div class="box">
+                    <select id="typesalaison" name="typeMateriau" onchange="fcntypeSalaison()" class="field large required valid"
+                        aria-invalid="false">
+                        <option selected="selected" value="0" >Saumon (2 à 3 kg)</option>
+                        <option value="1" >Saumon(5 à 6 kg)</option>
+                        <option value="2">Darne de saumon</option>
+                        <option value="3" >Truite</option>
+                        <option value="4">Truite saumonée</option>
+                        <option value="5" >Anguille</option>
+                        <option value="6">Flétan</option>
+                        <option value="7">Poulet</option>
+                        <option value="8">Magret d'oie</option>
+                        <option value="9">Magret de canard</option>
+                        <option value="10">Magret de canard 600 g</option>
+                        <option value="11">Magret de canard 1 kg</option>
+                        <option value="12">Porc</option>
+                        <option value="13">Filet mignon 300 gr</option>
+                        <option value="14">Poitrine de porc 1,5Kg</option>
+                        <option value="15">Jambon sans os</option>
+                    </select>
+                </div>
+            </div>
+            <fieldset style="overflow:auto;display:inline-block">
+                <div class="box">
+                    <label for="salaisonHauteur">Découpe</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="En filet, sans arêtes sur peau">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Salage à sec (par recouvrement)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="5 à 6 heures<">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Salage liquide (en saumure)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="10 à 12 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Déssalage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Rincer à l'eau claire">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">>Séchage au froid</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value=">12 3Découpeheures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Fumage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="4 à 6 heures<">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset style="overflow:auto;display:none">
+                <div class="box">
+                    <label for="salaisonHauteur">Découpe</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Séparer en évitant les entailler et retirer les arêtes">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Salage à sec (par recouvrement)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="8 à 10 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Déssalage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Rincer à l'eau claire">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">>Séchage au froid</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Egouttage sur grille<br />chambre froide 12 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Fumage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="6 à 8 heures">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset style="overflow:auto;display:none">
+                <div class="box">
+                    <label for="salaisonHauteur">Découpe</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Entière">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Salage à sec (par recouvrement)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="2 à 3 heures<">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Salage liquide (en saumure)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="10 à 12 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Déssalage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Rincer à l'eau claire">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">>Séchage au froid</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Egouttage sur grille chambre froide 12 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Fumage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="6 à 8 heures">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset style="overflow:auto;display:none">
+                <div class="box">
+                    <label for="salaisonHauteur">Découpe</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="En filet ou entière<">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Salage à sec (par recouvrement)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="2 ou 3 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Salage liquide (en saumure)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="10 à 12 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Déssalage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Rincer à l'eau claire">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">>Séchage au froid</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="12 heures<">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Fumage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="2 ou 3 heures /1⁄2">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset style="overflow:auto;display:none">
+                <div class="box">
+                    <label for="salaisonHauteur">Découpe</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="En filet ou entière">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Salage à sec (par recouvrement)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="2 à 3 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Salage liquide (en saumure)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="10 à 12 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Déssalage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Rincer à l'eau claire">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">>Séchage au froid</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="12 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Fumage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="4 à 6 heures<">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset style="overflow:auto;display:none">
+                <div class="box">
+                    <label for="salaisonHauteur">Découpe</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Entière">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Salage à sec (par recouvrement)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="3 à 4 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Salage liquide (en saumure)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="10 à 12 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Déssalage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Rincer à l'eau claire">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">>Séchage au froid</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="12 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Fumage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="4 heures un peu chaud">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset style="overflow:auto;display:none">
+                <div class="box">
+                    <label for="salaisonHauteur">Découpe</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="En filet avec la peau<">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Salage à sec (par recouvrement)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="2 à 3 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Salage liquide (en saumure)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="10 à 12 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Déssalage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Rincer à l'eau claire">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">>Séchage au froid</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="12 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Fumage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="3 heures">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset style="overflow:auto;display:none">
+                <div class="box">
+                    <label for="salaisonHauteur">Découpe</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Crapaudine">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Salage à sec (par recouvrement)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="6 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Déssalage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Rincer à l'eau claire<">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">>Séchage au froid</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="24 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Fumage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="4 à 6 heures">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset style="overflow:auto;display:none">
+                <div class="box">
+                    <label for="salaisonHauteur">Découpe</label>
+                    <div class="box">
+                        <textarea id="story" name="story" readonly="readonly" rows="3" cols="33">parrez votre magret (enlever la graisse, les nerfs, sang) Laissez la peau sur le dessus</textarea>
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Salage à sec (par recouvrement)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Les frotter un par un avec un bouquet garni puis<br />les laisser 7 à 8 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Déssalage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Rincer à l'eau claire">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">>Séchage au froid</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="24 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Fumage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="6 à 10 heures<">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Séchage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="26 à 30% du poids avant salaison">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset style="overflow:auto;display:none">
+                <div class="box">
+                    <label for="salaisonHauteur">Découpe</label>
+                    <div class="box">
+                        <textarea id="story" name="story" readonly="readonly" rows="3" cols="33">parrez votre magret (enlever la graisse, les nerfs, sang) Laissez la peau sur le dessus</textarea>
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Salage sous vide</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="12h/cm d’épaisseur+1 jour">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Déssalage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Retirer le gros sel avec un chiffon sec">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">>Séchage au froid</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="24 à 48 heures dans un lendroit sec et frais">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Fumage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="6 à 8 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Séchage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="26 à 30% du poids avant salaison">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset style="overflow:auto;display:none">
+                <div class="box">
+                    <label for="salaisonHauteur">Découpe</label>
+                    <div class="box">
+                        <textarea id="story" name="story" readonly="readonly" rows="3" cols="33">parrez votre magret (enlever la graisse, les nerfs, sang) Laissez la peau sur le dessus</textarea>
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Salage à sec (par recouvrement)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Le frotter avec un bouquet garni puis le laisser 7 à 8 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Déssalage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value=">Retirer le gros sel avec un chiffon sec">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">>Séchage au froid</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="24 à 48 heures dans un lendroit sec et frais">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Fumage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="6 à 8 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Séchage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="26 à 30% du poids avant salaison">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset style="overflow:auto;display:none">
+                <div class="box">
+                    <label for="salaisonHauteur">Découpe</label>
+                    <div class="box">
+                        <textarea id="story" name="story" readonly="readonly" rows="3" cols="33">parrez votre magret (enlever la graisse, les nerfs, sang) Laissez la peau sur le dessus</textarea>
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Salage à sec (par recouvrement)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Le frotter avec un bouquet garni puis le laisser 7 à 8 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Déssalage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Retirer le gros sel avec un chiffon sec">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">>Séchage au froid</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="24 à 48 heures dans un lendroit sec et frais">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Fumage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="2 x 8 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Séchage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="26 à 30% du poids avant salaison">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset style="overflow:auto;display:none">
+                <div class="box">
+                    <label for="salaisonHauteur">Découpe</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Poitrine, longe, saucisses, chipolatas">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Salage à sec (par recouvrement)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="8 à 10 heures selon épaisseur">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Déssalage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Tremper 45 min">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">>Séchage au froid</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="24 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Fumage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="3 x 8 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Séchage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="40% du poids avant salaison">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset style="overflow:auto;display:none">
+                <div class="box">
+                    <label for="salaisonHauteur">Découpe</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="parrez (enlever la graisse, les nerfs)">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Salage à sec (par recouvrement)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="12 à 15 heures<">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Salage liquide (en saumure)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="12 à 15 heures<">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Déssalage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Retirer le gros sel avec un chiffon sec">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">>Séchage au froid</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="24 à 48 heures dans un lendroit sec et frais">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Fumage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="2 x 8 heures">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Séchage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="30% du poids avant salaison">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset style="overflow:auto;display:none">
+                <div class="box">
+                    <label for="salaisonHauteur">Salage à sec (par recouvrement)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="2 à 3 jours<">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Salage liquide (en saumure)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="2 à 3 jours<">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Déssalage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Retirer le gros sel avec un chiffon sec">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Séchage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="40% du poids avant salaison">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset style="overflow:auto;display:none">
+                <div class="box">
+                    <label for="salaisonHauteur">Salage à sec (par recouvrement)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="12 à 16 jours<">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Salage liquide (en saumure)</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="12 à 16 jours<">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Déssalage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="Retirer le gros sel avec un chiffon sec">
+                    </div>
+                </div>
+                <div class="box">
+                    <label for="salaisonHauteur">Séchage</label>
+                    <div class="box">
+                        <input id="salaisonJour" readonly="readonly" type="text" value="40% du poids avant salaison">
+                    </div>
+                </div>
+            </fieldset>
+        </main>
+        <footer>
+            <p>Affinag du fromage température 8 et 13°C une hygromertrie entre 85% et 95% avec ventilation et aération </p>
+            <p>sechage viande température 13 et 16°C une hygromertrie entre 60% et 70% </p>
+        </footer>
+    </body>
+</html>
