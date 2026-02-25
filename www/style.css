@@ -35,7 +35,20 @@ header h1 {
   font-size: 1.3rem;
   margin: 0;
 }
-
+.conteneur{
+  height:200px;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+}
+.button{
+  width:400px;
+  height:100px;
+  background-color:#ff533c;
+  margin:auto;
+  padding:auto;
+  text-align:center
+}
 main {
   flex: 1;
   padding: 12px;
