@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="refresh" content="5">
+	<meta http-equiv="refresh" content="10">
 	<script src="scripts.js" defer></script>
 	<link href="style.css" rel="stylesheet" />
 	<link rel="icon" href="images/favicon.ico" />
@@ -47,31 +47,43 @@
 	</fieldset>
 	<fieldset>
 	<legend>paramètre</legend> <!-- Titre du fieldset -->
-		<h3>Réglage température</h3>
+		<h3>Réglage seuil température</h3>
 		<div class="container">
 			<div class="box">
-				<label for="temp_mini">Seuil mini température</label>
+				<label for="temp_mini">mini</label>
 				<div>
 					<input inputmode="decimal" id="temp_mini" onchange="fct_temp_mini()" min="1" max="100" step="1"  type="number" value="{{consigne_temp_mini}}">
 				</div>
 			</div>
 			<div class="box">
-				<label for="temp_max">Seuil maxi température</label>
+				<label for="temp_median">median</label>
+				<div>
+					<input inputmode="decimal" id="temp_median" onchange="fct_temp_median()" min="1" max="100" step="1"  type="number" value="{{consigne_temp_median}}">
+				</div>
+			</div>
+			<div class="box">
+				<label for="temp_max">Seuil maxi</label>
 				<div>
 					<input inputmode="decimal" id="temp_max" onchange="fct_temp_max()" min="1" max="100" step="1"  type="number" value="{{consigne_temp_maxi}}">
 				</div>
 			</div>
 		</div>
-		<h3>Réglage humidité</h3>
+		<h3>Réglage seuil humidité</h3>
 		<div class="container">
 			<div class="box">
-				<label for="humid_mini">% humidité mini</label>
+				<label for="humid_mini">% mini</label>
 				<div>
 					<input inputmode="decimal" id="humid_mini" onchange="fct_humid_mini()" min="2" max="100" step="1"  type="number" value="{{consigne_humi_nini}}">
 				</div>
 			</div>
 			<div class="box">
-				<label for="humid_max">% humidité maxi</label>
+				<label for="humid_mini">% median</label>
+				<div>
+					<input inputmode="decimal" id="humid_mini" onchange="fct_humid_median()" min="2" max="100" step="1"  type="number" value="{{consigne_humi_median}}">
+				</div>
+			</div>
+			<div class="box">
+				<label for="humid_max">% maxi</label>
 				<div>
 					<input inputmode="decimal" id="humid_max" onchange="fct_humid_max()" min="1" max="100" step="1"  type="number" value="{{consigne_humi_maxi}}">
 				</div>

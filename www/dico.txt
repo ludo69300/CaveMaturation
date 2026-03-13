@@ -1,5 +1,7 @@
 consigne_temp_mini:13
+consigne_temp_median:14
 consigne_temp_maxi:16
 consigne_humi_nini:60
+consigne_humi_median:62
 consigne_humi_maxi:70
 consigne_ventilateur:On

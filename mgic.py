@@ -29,35 +29,21 @@ def gestion_interne_et_affichages_capteurs(dico) :
 
     if temp<int(dico["consigne_temp_mini"]):
         pilote_chauffage.on()
-        pilote_chauffage_t='on'
-    else :
+    elif temp>=int(dico["consigne_temp_median"]):
         pilote_chauffage.off()
-        pilote_chauffage_t='off'
-    #print('chauffage : ',pilote_chauffage_t)#debug
-
-    if temp>int(dico["consigne_temp_maxi"]):
-        pilote_refroidissement.on()
-        pilote_refroidissement_t='on'
-    else :
+    elif temp<int(dico["consigne_temp_median"]):
         pilote_refroidissement.off()
-        pilote_refroidissement_t='off'
-    #print('refrigeration : ',pilote_refroidissement_t)#debug
+    elif temp>=int(dico["consigne_temp_maxi"]):
+        pilote_refroidissement.on()
 
-    if hum<int(dico["consigne_humi_nini"]):
+    if temp<int(dico["consigne_humi_nini"]):
         pilote_humidificateur.on()
-        pilote_humidificateur_t='on'
-    else :
+    elif temp>=int(dico["consigne_temp_median"]):
         pilote_humidificateur.off()
-        pilote_humidificateur_t='off'
-    #print('humidification : ',pilote_humidificateur_t)#debug
-
-    if hum>int(dico["consigne_humi_maxi"]):
-        pilote_deshumidificateur.on()
-        pilote_deshumidificateur_t='on'
-    else :
+    elif temp<int(dico["consigne_humi_median"]):
         pilote_deshumidificateur.off()
-        pilote_deshumidificateur_t='off'
-    #print('deshumidificateur',pilote_deshumidificateur_t)#debug
+    elif temp>=int(dico["consigne_humi_maxi"]):
+        pilote_deshumidificateur.on()
 
     if dico["consigne_ventilateur"]=="On":
         pilote_ventilateur.off()
