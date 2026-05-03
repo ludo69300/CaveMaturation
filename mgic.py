@@ -27,20 +27,20 @@ def gestion_interne_et_affichages_capteurs(dico) :
     pres = bme.pressure[:-3]
     #print(temp)#debug
 
-    if temp<int(dico["consigne_temp_mini"]):
+    if temp<=int(dico["consigne_temp_mini"]):
         pilote_chauffage.on()
     elif temp>=int(dico["consigne_temp_median"]):
         pilote_chauffage.off()
-    elif temp<int(dico["consigne_temp_median"]):
+    elif temp<=int(dico["consigne_temp_median"]):
         pilote_refroidissement.off()
     elif temp>=int(dico["consigne_temp_maxi"]):
         pilote_refroidissement.on()
 
-    if temp<int(dico["consigne_humi_nini"]):
+    if temp<=int(dico["consigne_humi_nini"]):
         pilote_humidificateur.on()
     elif temp>=int(dico["consigne_temp_median"]):
         pilote_humidificateur.off()
-    elif temp<int(dico["consigne_humi_median"]):
+    elif temp<=int(dico["consigne_humi_median"]):
         pilote_deshumidificateur.off()
     elif temp>=int(dico["consigne_humi_maxi"]):
         pilote_deshumidificateur.on()
