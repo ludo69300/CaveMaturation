@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="refresh" content="10">
+	<meta http-equiv="refresh" content="50">
 	<script src="scripts.js" defer></script>
 	<link href="style.css" rel="stylesheet" />
 	<link rel="icon" href="images/favicon.ico" />
@@ -25,46 +25,57 @@
 	<fieldset>
 		<legend>Mesure</legend>
 			<div class="container">
-			<div class="box">
-				<label for="Temperature">Température</label>
-				<div>
-					<input id="Temperature" name="Temperature" readonly="readonly"  type="text" value="{{temperature}}">
+				<div class="box">
+					<label for="Temperature">Température</label>
+					<div>
+						<input id="Temperature" name="Temperature" readonly="readonly"  type="text" value="{{temperature}}">
+					</div>
 				</div>
-			</div>
-			<div class="box">
-				<label for="Humidity">Humidité</label>
-				<div>
-					<input id="Humidity" name="Humidity" readonly="readonly"  type="text" value="{{humidity}}">
+				<div class="box">
+					<label for="Humidity">Humidité</label>
+					<div>
+						<input id="Humidity" name="Humidity" readonly="readonly"  type="text" value="{{humidity}}">
+					</div>
 				</div>
-			</div>
-			<div class="box">
-				<label for="pressure">pession</label>
-				<div>
-					<input id="pressure" name="pressure" readonly="readonly"  type="text" value="{{pressure}}">
+				<div class="box">
+					<label for="pressure">pession</label>
+					<div>
+						<input id="pressure" name="pressure" readonly="readonly"  type="text" value="{{pressure}}">
+					</div>
 				</div>
 			</div>
 		</div>
 	</fieldset>
 	<fieldset>
 	<legend>paramètre</legend> <!-- Titre du fieldset -->
+		<div class="box">
+			<label for="type sal">type ou produit</label>
+			<div class="box">
+				<select id="typeaffinage" name="typeMateriau" onchange="fct_type_affinage()" class="field large required valid"
+					aria-invalid="false">
+					<option value="0" >Fromage</option>
+					<option value="1" >Viande</option>
+				</select>
+			</div>
+		</div>
 		<h3>Réglage seuil °C température</h3>
 		<div class="container">
 			<div class="box">
 				<label for="temp_mini">mini</label>
 				<div>
-					<input inputmode="decimal" id="temp_mini" onchange="fct_temp_mini()" min="1" max="100" step="1"  type="number" value="{{consigne_temp_mini}}">
+					<input inputmode="decimal" id="temp_mini" onchange="fct_temp_mini()" min="1" max="100" step="1"  type="number" value="{{temp_mini}}">
 				</div>
 			</div>
 			<div class="box">
 				<label for="temp_median">median</label>
 				<div>
-					<input inputmode="decimal" id="temp_median" onchange="fct_temp_median()" min="1" max="100" step="1"  type="number" value="{{consigne_temp_median}}">
+					<input inputmode="decimal" id="temp_median" onchange="fct_temp_median()" min="1" max="100" step="1"  type="number" value="{{temp_median}}">
 				</div>
 			</div>
 			<div class="box">
 				<label for="temp_max">maxi</label>
 				<div>
-					<input inputmode="decimal" id="temp_max" onchange="fct_temp_max()" min="1" max="100" step="1"  type="number" value="{{consigne_temp_maxi}}">
+					<input inputmode="decimal" id="temp_max" onchange="fct_temp_max()" min="1" max="100" step="1"  type="number" value="{{temp_maxi}}">
 				</div>
 			</div>
 		</div>
@@ -73,26 +84,26 @@
 			<div class="box">
 				<label for="humid_mini">mini</label>
 				<div>
-					<input inputmode="decimal" id="humid_mini" onchange="fct_humid_mini()" min="2" max="100" step="1"  type="number" value="{{consigne_humi_nini}}">
+					<input inputmode="decimal" id="humid_mini" onchange="fct_humid_mini()" min="2" max="100" step="1"  type="number" value="{{humi_nini}}">
 				</div>
 			</div>
 			<div class="box">
 				<label for="humid_mini">median</label>
 				<div>
-					<input inputmode="decimal" id="humid_mini" onchange="fct_humid_median()" min="2" max="100" step="1"  type="number" value="{{consigne_humi_median}}">
+					<input inputmode="decimal" id="humid_mini" onchange="fct_humid_median()" min="2" max="100" step="1"  type="number" value="{{humi_median}}">
 				</div>
 			</div>
 			<div class="box">
 				<label for="humid_max">maxi</label>
 				<div>
-					<input inputmode="decimal" id="humid_max" onchange="fct_humid_max()" min="1" max="100" step="1"  type="number" value="{{consigne_humi_maxi}}">
+					<input inputmode="decimal" id="humid_max" onchange="fct_humid_max()" min="1" max="100" step="1"  type="number" value="{{humi_maxi}}">
 				</div>
 			</div>
 		</div>
 		<h3>Ventilateur</h3>
 		<div class="container">
 			<div class="box">
-				<label for="humid_mini">ventilation : {{consigne_ventilateur}}</label>
+				<label for="humid_mini">ventilation : {{ventilateur}}</label>
 				<div>
 					<input id="ventilation" onclick="fct_ventilation()" type="button" value="Ventilation">
 				</div>
@@ -104,5 +115,3 @@
 <footer><p>commande: {{commande}}</p></footer>
 </body>
 </html>
-
-

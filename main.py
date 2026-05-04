@@ -105,11 +105,9 @@ def get_request_file(request_file_name):
     return file_requested
 
 def acquisition_dico(dico):
-    fic=open(repertoire+'/dico.txt','r')
-    ch=fic.readlines()
-    n=len(ch)
-    for i in range(n):
-        dico[ch[i].split(':')[0]]=ch[i].split(':')[1].rstrip()
+    with open(repertoire+'/dico.txt',"r",encoding="utf8") as file:
+        textdic = file.read()
+    dico = eval(textdic)
     return dico
     
     

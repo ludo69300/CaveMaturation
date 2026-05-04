@@ -1,7 +1,1 @@
-consigne_temp_mini:13
-consigne_temp_median:14
-consigne_temp_maxi:16
-consigne_humi_nini:60
-consigne_humi_median:62
-consigne_humi_maxi:70
-consigne_ventilateur:On
+{'consigne_temp_mini': (7, 12), 'consigne_temp_median': (8, 13), 'consigne_temp_maxi': (13, 16), 'consigne_humi_nini': (80, 60), 'consigne_humi_median': (85, 62), 'consigne_humi_maxi': (95, 70), 'current': 0, 'temp_mini': 7, 'temp_median': 8, 'temp_maxi': 13, 'humi_nini': 80, 'humi_median': 85, 'humi_maxi': 95, 'ventilateur': 'On'}
