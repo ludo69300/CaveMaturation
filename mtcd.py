@@ -36,9 +36,9 @@ def traitement_commandes_dynamiques(commande, dico):
             dico["humi_maxi"]=str(commande_split[1])
         elif commande_split[0] == 'ventilation':
             if dico["ventilateur"]=='On':
-                dico["ventilateur"]="Off"
-            else:
                 dico["ventilateur"]="On"
+            else:
+                dico["ventilateur"]="Off"
          with open(repertoire+'/dico.txt',"w",encoding="utf8") as file:
         file.write(f"{dico}")   
     ##################################################
