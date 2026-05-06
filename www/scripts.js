@@ -38,3 +38,4 @@ function fct_ventilation() {
 	commande_XHR.open("GET","/?ventilation=OnOff",true);
 	commande_XHR.send()
 };
+document.getElementById("typeaffinage").selectedIndex = '{{current}}';
